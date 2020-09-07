@@ -1,0 +1,30 @@
+.chatMessage {
+  width: fit-content;
+  background-color: burlywood;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ffff;
+  max-width: 80%;
+}
+
+.chatMessage__name {
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  color: purple;
+}
+.chatMessage__content {
+  text-align: justify;
+  margin-bottom: 5px;
+}
+
+.chatMessage__timestamp {
+  text-align: right;
+  color: gray;
+}
+
+.chatMessage__self {
+  margin-left: auto;
+  background-color: #dcf8c6;
+}
