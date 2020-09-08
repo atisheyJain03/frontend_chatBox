@@ -11,7 +11,7 @@
 
 .chatMessage__name {
   margin-bottom: 10px;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   color: purple;
 }
 .chatMessage__content {

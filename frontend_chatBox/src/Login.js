@@ -10,7 +10,7 @@ function Login({ setUser }) {
     auth
       .signInWithPopup(provider)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         const data = {
           name: res.user.displayName,
           email: res.user.email,
@@ -27,7 +27,7 @@ function Login({ setUser }) {
             Cookies.set("user", res.data.data, {
               expires: 7,
             });
-            console.log(Cookies.get("user"));
+            // console.log(Cookies.get("user"));
           })
           .catch((err) => alert(err.message));
       })

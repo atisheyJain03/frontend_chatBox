@@ -6,10 +6,10 @@ function chatMessage({ body, from, timestamp, userid }) {
   return (
     <div
       className={`chatMessage ${
-        from === userid._id ? "chatMessage__self" : ""
+        from === userid.email ? "chatMessage__self" : ""
       }`}
     >
-      <h3 className="chatMessage__name">{userid.name}</h3>
+      <h3 className="chatMessage__name">{from}</h3>
       <p className="chatMessage__content">{body}</p>
       <h6 className="chatMessage__timestamp">{timestamp}</h6>
     </div>

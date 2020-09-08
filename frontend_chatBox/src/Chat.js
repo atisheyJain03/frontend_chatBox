@@ -34,7 +34,7 @@ function Chat({ currRoomId, currUser }) {
 
     channel.bind("message", function (data) {
       JSON.stringify(data);
-      if (data.message.from != currUser._id)
+      if (data.message.from != currUser.email)
         setMessages((messages) => [...messages, data.message]);
     });
 
@@ -47,14 +47,17 @@ function Chat({ currRoomId, currUser }) {
   const submitCallback = (event) => {
     // console.log("submitCallBack");
     event.preventDefault();
-    console.log(inputRef.current.value);
+    // console.log(inputRef.current.value);
 
     let msg = inputRef.current.value;
     inputRef.current.value = "";
+    msg = msg.trim();
+    if (!msg) return;
     const body = {
       body: msg,
-      from: currUser,
+      from: currUser.email,
     };
+    // console.log(body);
     (async () => {
       msg = await axios.post("/message/" + currRoomId, {
         data: body,
@@ -68,13 +71,17 @@ function Chat({ currRoomId, currUser }) {
     // console.log("submitUser");
     event.preventDefault();
     // console.log(searchUserRef.current.value);
-    const findUser = searchUserRef.current.value;
+    let findUser = searchUserRef.current.value;
+    findUser = findUser.trim();
     searchUserRef.current.value = "";
+    if (!findUser) return;
+
     const user = await axios.post("/user/" + currRoomId, {
       data: {
         email: findUser,
       },
     });
+    alert(findUser + " has been added in the room");
     // console.log(user);
   };
 

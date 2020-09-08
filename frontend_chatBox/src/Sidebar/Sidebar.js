@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Sidebar.css";
 import AddIcon from "@material-ui/icons/Add";
 
@@ -12,21 +12,21 @@ import Pusher from "pusher-js";
 function Sidebar({ user }) {
   const [currRoom, setCurrRoom] = useState(null);
   const [roomid, setRoomid] = useState([]);
-  const [roomInput, setRoomInput] = useState("");
+  const roomRef = useRef("");
 
   const submitCallback = async (event) => {
     event.preventDefault();
-    // console.log(roomInput);
+    let newRoom = roomRef.current.value;
+    roomRef.current.value = "";
+    newRoom = newRoom.trim();
+    if (!newRoom) return;
     const room = await axios.post("/room", {
       data: {
-        name: roomInput,
+        name: newRoom,
         user: user.email,
       },
     });
     setRoomid([...roomid, room]);
-    // console.log(roomid, "callback");
-    // console.log(room, "callback");
-    setRoomInput("");
   };
 
   useEffect(() => {
@@ -38,8 +38,9 @@ function Sidebar({ user }) {
 
     channel.bind("room", function (data) {
       JSON.stringify(data);
+      // data = JSON.parse(data);
       // console.log(data);
-      alert(data);
+      alert("new room");
       setRoomid((roomid) => [...roomid, data]);
     });
   }, []);
@@ -77,8 +78,9 @@ function Sidebar({ user }) {
               <input
                 type="text"
                 placeholder="Want to Create new room ? Enter room name"
-                value={roomInput}
-                onChange={(e) => setRoomInput(e.target.value)}
+                // value={roomInput}
+                // onChange={(e) => setRoomInput(e.target.value)}
+                ref={roomRef}
               />
               <IconButton type="submit">
                 <AddIcon />
