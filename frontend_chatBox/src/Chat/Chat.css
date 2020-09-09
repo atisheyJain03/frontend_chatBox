@@ -11,10 +11,13 @@
   padding: 15px;
   border-bottom: 1px solid lightgrey;
 }
-
+.Loader {
+  flex: 0.4;
+  margin-top: -22px;
+}
 .chat__header--info {
   align-items: center;
-  flex: 0.6;
+  flex: 0.4;
   margin-left: 10px;
 }
 

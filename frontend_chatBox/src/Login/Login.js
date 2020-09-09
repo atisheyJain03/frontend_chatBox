@@ -1,16 +1,18 @@
 import React from "react";
-import { auth, provider } from "./firebase.js";
-import axios from "./axios.js";
+import { auth, provider } from "../firebase.js";
+import axios from "../axios.js";
 import Cookies from "js-cookie";
 import { Button } from "@material-ui/core";
 import "./Login.css";
+
+// HERE axios is not not axios module but the file which i have made with base adress
 
 function Login({ setUser }) {
   const signIn = () => {
     auth
       .signInWithPopup(provider)
       .then((res) => {
-        // console.log(res);
+        // take name,email,image from google login response
         const data = {
           name: res.user.displayName,
           email: res.user.email,
@@ -22,12 +24,12 @@ function Login({ setUser }) {
             data: data,
           })
           .then((res) => {
+            //      set user {state setter for user from ../App.js file   (come as prop) }
             setUser(res.data.data);
-
+            // set cookie name user which will expire in 7 days
             Cookies.set("user", res.data.data, {
               expires: 7,
             });
-            // console.log(Cookies.get("user"));
           })
           .catch((err) => alert(err.message));
       })

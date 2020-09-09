@@ -2,10 +2,15 @@ import React from "react";
 import "./ChatMessage.css";
 
 function chatMessage({ body, from, timestamp, userid }) {
-  // console.log(from, userid._id);
   return (
     <div
       className={`chatMessage ${
+        // this will check if this message is from us or from other user
+
+        // if message is from us means (we have send the message ) it will add styling like add green backgroung and more...
+
+        // else it will not  add extra class and there will be no change in styling
+
         from === userid.email ? "chatMessage__self" : ""
       }`}
     >

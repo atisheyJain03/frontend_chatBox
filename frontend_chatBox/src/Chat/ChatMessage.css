@@ -17,6 +17,8 @@
 .chatMessage__content {
   text-align: justify;
   margin-bottom: 5px;
+  overflow-wrap: break-word;
+  max-width: 50vw;
 }
 
 .chatMessage__timestamp {

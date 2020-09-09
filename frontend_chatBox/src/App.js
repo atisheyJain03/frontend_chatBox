@@ -3,25 +3,25 @@ import Sidebar from "./Sidebar/Sidebar";
 import Cookies from "js-cookie";
 
 import "./App.css";
-import Login from "./Login";
+import Login from "./Login/Login";
 
 function App() {
+  // this is login user by default it is null
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    // in this if ther is any cookie named user
     let tempUser = Cookies.get("user");
-    // console.log(tempUser);
-
     if (tempUser !== undefined) {
-      // console.log("1");
+      // if there is any cookie named user we will asve that value is user state and the page will re-render
       tempUser = JSON.parse(tempUser);
-      // console.log(tempUser);
       setUser(tempUser);
     }
   }, []);
 
-  // console.log(user);
   return (
+    // if no user Show login page
+    // else show page for chating
     <>
       {!user ? (
         <Login setUser={setUser} />
