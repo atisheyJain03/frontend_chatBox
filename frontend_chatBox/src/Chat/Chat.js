@@ -127,7 +127,7 @@ function Chat({ currRoomId, currUser }) {
           <form onSubmit={submitUser}>
             <input
               type="email"
-              placeholder="Want to Add new user?"
+              placeholder="Want to Add new user?Enter user email"
               ref={searchUserRef}
             />
             <IconButton type="submit">
