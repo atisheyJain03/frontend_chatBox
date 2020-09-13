@@ -45,7 +45,7 @@ function Login({ setUser }) {
         />
         <h1 className="login__text">Sign in to WhatsApp</h1>
         <Button className="login__button" onClick={signIn}>
-          login with google
+          login/Signup with google
         </Button>
       </div>
     </div>
