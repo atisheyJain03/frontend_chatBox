@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# This is RealTime Messageing App where you can send and receive messages instantly
 
-## Available Scripts
+## FEATURES
 
-In the project directory, you can run:
+- You can create infinite number of rooms
+- You can add infinite number of users in a room
+- Anyone who is part of the room can add user in a room
+- instantaneous login/Signup with Google . No need to remember username or password
+- User info will be saved in cookie for 7 days hence no need to login again when refresh
 
-### `npm start`
+## Tools And Technology used-
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React.js for frontend
+- node.js API for backend [Api source code](https://github.com/atisheyJain03/backend_chatBox)
+- Pusher for realtime messaging [Website link](https://pusher.com)
+- Firebase authantication for ligin/Signup
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Login/Signup
 
-### `npm test`
+#### for login/Signup user need to click on login/Signup with google . if there is no user with that email A new account will be created else user will be logged in with existed account with all the previous info about Rooms and messages
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Login picture] (./readme_images/login_signup.png)
 
-### `npm run build`
+### Create new rooom
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### To create new room enter new room here and press enter or click on plus icon
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[Create new room] (./readme_images/new_room.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Add new user
 
-### `npm run eject`
+#### To add new user enter user email here and press enter .if there is a user with this email an alert (user added with <email>) will be popped up else another alert will popup with message (no user found)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[Add new user] (./readme_images/new_user.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### To message in a room
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### write your message here and pres enter
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[message picture] (./readme_images/message.png)
 
-## Learn More
+### Delete room
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### click on dustbin icon of the room you want to delete
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[delete picture] (./readme_images/delete.png)
