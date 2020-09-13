@@ -15,6 +15,8 @@
 - Pusher for realtime messaging [Website link](https://pusher.com)
 - Firebase authantication for ligin/Signup
 
+## Features
+
 * You can create infinite number of rooms
 * You can add infinite number of users in a room
 * Anyone who is part of the room  can add user in a room 
