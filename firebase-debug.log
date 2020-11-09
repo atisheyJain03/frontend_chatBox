@@ -1,0 +1,77 @@
+[debug] [2020-11-09T13:54:03.808Z] ----------------------------------------------------------------------
+[debug] [2020-11-09T13:54:03.812Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\iatis\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2020-11-09T13:54:03.813Z] CLI Version:   8.10.0
+[debug] [2020-11-09T13:54:03.813Z] Platform:      win32
+[debug] [2020-11-09T13:54:03.813Z] Node Version:  v12.18.4
+[debug] [2020-11-09T13:54:03.815Z] Time:          Mon Nov 09 2020 19:24:03 GMT+0530 (India Standard Time)
+[debug] [2020-11-09T13:54:03.815Z] ----------------------------------------------------------------------
+[debug] [2020-11-09T13:54:03.816Z] 
+[debug] [2020-11-09T13:54:03.832Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-09T13:54:03.836Z] > authorizing via signed-in user
+[debug] [2020-11-09T13:54:03.857Z] [iam] checking project whatsapp-c3fb2 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-11-09T13:54:03.866Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/whatsapp-c3fb2:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-11-09T13:54:05.463Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 13:54:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1349","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T13:54:05.517Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/whatsapp-c3fb2  
+ 
+[debug] [2020-11-09T13:54:06.067Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 13:54:06 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'whatsapp-c3fb2'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-11-09T13:54:06.088Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/whatsapp-c3fb2/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-11-09T13:54:08.522Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 13:54:08 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[whatsapp-c3fb2]: beginning deploy... 
+[info] i  hosting[whatsapp-c3fb2]: found 1 files in build 
+[debug] [2020-11-09T13:54:08.783Z] [hosting] hash cache [YnVpbGQ] stored for 1 files
+[debug] [2020-11-09T13:54:08.801Z] [hosting][hash queue][FINAL] {"max":14,"min":14,"avg":14,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":36}
+[debug] [2020-11-09T13:54:08.804Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/whatsapp-c3fb2/versions/e3436608d49b8254:populateFiles  
+ <request body omitted>
+[info] i  hosting: adding files to version [0/1] (0%) 
+[debug] [2020-11-09T13:54:10.791Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 13:54:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T13:54:10.833Z] [hosting][populate queue][FINAL] {"max":2049,"min":2049,"avg":2049,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2053}
+[debug] [2020-11-09T13:54:10.836Z] [hosting] uploads queued: 1
+[info] i  hosting: uploading new files [0/1] (0%) 
+[info] i  hosting: uploading new files [0/1] (0%) 
+[debug] [2020-11-09T13:54:16.114Z] [hosting][upload queue][FINAL] {"max":5285,"min":5285,"avg":5285,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":5285}
+[info] +  hosting[whatsapp-c3fb2]: file upload complete 
+[debug] [2020-11-09T13:54:16.178Z] [hosting] deploy completed after 7447ms
+[debug] [2020-11-09T13:54:16.513Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "whatsapp-c3fb2"
+    },
+    "site": "whatsapp-c3fb2",
+    "version": "sites/whatsapp-c3fb2/versions/e3436608d49b8254"
+  }
+]
+[info] i  hosting[whatsapp-c3fb2]: finalizing version... 
+[debug] [2020-11-09T13:54:16.621Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/whatsapp-c3fb2/versions/e3436608d49b8254?updateMask=status  
+ {"status":"FINALIZED"}
+[debug] [2020-11-09T13:54:18.662Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 13:54:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T13:54:18.706Z] [hosting] finalized version for whatsapp-c3fb2: {"name":"sites/whatsapp-c3fb2/versions/e3436608d49b8254","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2020-11-09T13:54:08.388860Z","createUser":{"email":"iatisheyjain@gmail.com"},"finalizeTime":"2020-11-09T13:54:18.770407Z","finalizeUser":{"email":"iatisheyjain@gmail.com"}}
+[info] +  hosting[whatsapp-c3fb2]: version finalized 
+[info] i  hosting[whatsapp-c3fb2]: releasing new version... 
+[debug] [2020-11-09T13:54:18.797Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/whatsapp-c3fb2/releases?version_name=sites/whatsapp-c3fb2/versions/e3436608d49b8254  
+ {"message":null}
+[debug] [2020-11-09T13:54:22.757Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 13:54:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T13:54:22.823Z] [hosting] release: {"name":"sites/whatsapp-c3fb2/releases/1604930062330844","version":{"name":"sites/whatsapp-c3fb2/versions/e3436608d49b8254","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2020-11-09T13:54:08.388860Z","createUser":{"email":"iatisheyjain@gmail.com"},"finalizeTime":"2020-11-09T13:54:18.770407Z","finalizeUser":{"email":"iatisheyjain@gmail.com"},"preview":{}},"type":"DEPLOY","releaseTime":"2020-11-09T13:54:22.330844308Z","releaseUser":{"email":"iatisheyjain@gmail.com"}}
+[info] +  hosting[whatsapp-c3fb2]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/whatsapp-c3fb2/overview
+[info] Hosting URL: https://whatsapp-c3fb2.web.app
