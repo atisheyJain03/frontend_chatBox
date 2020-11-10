@@ -8,9 +8,9 @@ import SidebarHeader from "./SidebarHeader";
 import SidebarSearch from "./SidebarSearch";
 import SidebarRoomList from "./SidebarRoomList";
 import Loader from "../Loader/Loader";
-import { Grid, IconButton } from "@material-ui/core";
-import Drawer from "../drawer/Drawer"
+import { IconButton } from "@material-ui/core";
 import MenuSharpIcon from '@material-ui/icons/MenuSharp';
+import Logout from "../logout/Logout"
 
 function Sidebar({ user }) {
   // room state it will store room id which will decide which room message to show
@@ -108,6 +108,10 @@ function Sidebar({ user }) {
       setIsLoading(false); // this will remove loader by default which is true
     })();
   }, [user]);
+  
+
+  
+  
   console.log(showSidebar)
   if( window.matchMedia("(min-width: 768px)").matches) {
     console.log(true)
@@ -118,6 +122,10 @@ function Sidebar({ user }) {
         <IconButton onClick={() =>  setShowSidebar(!showSidebar)} >
           <MenuSharpIcon  />
         </IconButton>
+        <div>
+        <Logout />
+        </div>
+      
       </div>
       {showSidebar &&
         <div className="sidebar__left">
@@ -125,7 +133,6 @@ function Sidebar({ user }) {
         <SidebarSearch roomRef={roomRef} submitCallback={submitCallback}  />
         <div className="sidebar__chats"  onClick={() =>  setShowSidebar(false)}  >
           <SidebarRoomList
-          
             roomid={roomid}
             setCurrRoom={setCurrRoom}
             deleteRoom={deleteRoomHandler}

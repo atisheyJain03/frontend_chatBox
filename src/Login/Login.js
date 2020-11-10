@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { auth, provider } from "../firebase.js";
 import axios from "../axios.js";
 import Cookies from "js-cookie";
 import { Button } from "@material-ui/core";
 import "./Login.css";
+import Loader from "../Loader/Loader.js";
 
 // HERE axios is not not axios module but the file which i have made with base adress
 
 function Login({ setUser }) {
+  
+  const [loading , setLoading] = useState(false);
+  
   const signIn = () => {
+    setLoading(true);
     auth
       .signInWithPopup(provider)
       .then((res) => {
@@ -24,20 +29,24 @@ function Login({ setUser }) {
             data: data,
           })
           .then((res) => {
-            //      set user {state setter for user from ../App.js file   (come as prop) }
+            setLoading(false);
+            // set user {state setter for user from ../App.js file   (come as prop) }
+            
             setUser(res.data.data);
             // set cookie name user which will expire in 7 days
             Cookies.set("user", res.data.data, {
               expires: 7,
             });
+           
           })
-          .catch((err) => alert(err.message));
+          .catch((err) => {   setLoading(false);  alert(err.message)});
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => {   setLoading(false);  alert(err.message)});
   };
 
   return (
     <div className="login">
+      {loading ? <Loader /> :
       <div className="login__container ">
         <img
           className="login__image"
@@ -48,6 +57,7 @@ function Login({ setUser }) {
           login/Signup with google
         </Button>
       </div>
+}
     </div>
   );
 }
