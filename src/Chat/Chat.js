@@ -63,7 +63,7 @@ function Chat({ currRoomId, currUser }) {
 
     // unsubscribe the channel when component will unmount again to prevent from data leak
     return () => {
-      console.log("unsubscribed");
+      // console.log("unsubscribed");
       channel.unbind("message");
       channel.unsubscribe();
     };
@@ -146,7 +146,7 @@ function Chat({ currRoomId, currUser }) {
             <ChatMessage // this is single message component
               body={message.body}
               key={message._id}
-              timestamp={message.createdAt}
+              timestamp={message.date}
               from={message.from}
               userid={currUser}
             />

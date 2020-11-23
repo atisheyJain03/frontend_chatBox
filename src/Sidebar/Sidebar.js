@@ -110,15 +110,10 @@ function Sidebar({ user }) {
   }, [user]);
   
 
-  
-  
-  console.log(showSidebar)
-  if( window.matchMedia("(min-width: 768px)").matches) {
-    console.log(true)
-  }
   return (
     <div className="sidebar">
       <div>
+        {/* this will change visibility of sidebar if click on menu icon */}
         <IconButton onClick={() =>  setShowSidebar(!showSidebar)} >
           <MenuSharpIcon  />
         </IconButton>
@@ -141,7 +136,8 @@ function Sidebar({ user }) {
           {isLoading && <Loader />}
         </div>
       </div>
- } 
+ }        
+ {/* if window width is less than 786 sidebar and chating area will not be visible at same time */}
       { (!currRoom || ( showSidebar && !window.matchMedia("(min-width: 768px)").matches ) )
          ? null : <Chat currRoomId={currRoom} currUser={user} />}
     </div>

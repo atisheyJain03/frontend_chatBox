@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     setLoading(true);
     window.setTimeout(() => {
-      console.log("loading")
+      // console.log("loading")
       setLoading(false);
     },500)
     // in this if there is any cookie named user
