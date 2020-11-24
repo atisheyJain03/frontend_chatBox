@@ -13,7 +13,7 @@
 - React.js for frontend
 - node.js API for backend [Api source code](https://github.com/atisheyJain03/backend_chatBox)
 - Pusher for realtime messaging [Website link](https://pusher.com)
-- Firebase authantication for ligin/Signup
+- Firebase authantication for login/Signup
 
 ## Features
 
