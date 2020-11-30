@@ -11,8 +11,9 @@ import Loader from "../Loader/Loader";
 import { IconButton } from "@material-ui/core";
 import MenuSharpIcon from '@material-ui/icons/MenuSharp';
 import Logout from "../logout/Logout"
+import Settings from "../settings/Settings";
 
-function Sidebar({ user }) {
+function Sidebar({ user , setUser }) {
   // room state it will store room id which will decide which room message to show
   const [currRoom, setCurrRoom] = useState("");
 
@@ -118,15 +119,19 @@ function Sidebar({ user }) {
           <MenuSharpIcon  />
         </IconButton>
         <div>
-        <Logout />
+        <Settings user={user} setUser={setUser} />
         </div>
+        <div>
+        <Logout  />
+        </div>
+       
       
       </div>
       {showSidebar &&
         <div className="sidebar__left">
         <SidebarHeader name={user.name} image={user.image}  />
         <SidebarSearch roomRef={roomRef} submitCallback={submitCallback}  />
-        <div className="sidebar__chats"  onClick={() =>  setShowSidebar(false)}  >
+        <div className="sidebar__chats"  onClick={() => {if(!window.matchMedia("(min-width: 768px)").matches)  setShowSidebar(false)} }  >
           <SidebarRoomList
             roomid={roomid}
             setCurrRoom={setCurrRoom}

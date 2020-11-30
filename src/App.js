@@ -9,7 +9,7 @@ import Login from "./Login/Login";
 function App() {
   // this is login user by default it is null
   const [user, setUser] = useState(null);
-  const [loading,setLoading] = useState(false)
+  const [loading,setLoading] = useState(true)
   useEffect(() => {
     setLoading(true);
     window.setTimeout(() => {
@@ -35,7 +35,7 @@ function App() {
       ) : (
         <div className="app">
           <div className="app__body">
-            <Sidebar user={user} />
+            <Sidebar user={user} setUser={setUser} />
           </div>
         </div>
       )}
